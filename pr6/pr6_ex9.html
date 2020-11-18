@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>pr6_ex9</title>
+</head>
+
+<body>
+    <script>
+        var str = 'я учу javascript!'
+        document.write(str.length);
+        document.write('<br>');
+
+        document.write(str.substr(2, 3));
+        document.write('<br>');
+        document.write(str.substring(2, 5));
+        document.write('<br>');
+        document.write(str.slice(2, 5));
+        document.write('<br>');
+
+        document.write(str.indexOf('учу'));
+        document.write('<br>');
+
+
+        var n = 10;
+        if (str.length > n) {
+            var result = str.slice(0, 10);
+            alert(result + '...')
+        } else if (str.length < n) {
+            var result = str;
+            alert(result)
+        }
+
+    </script>
+</body>
+
+</html>
