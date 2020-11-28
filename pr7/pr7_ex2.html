@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>pr7_ex2</title>
+</head>
+
+<body>
+    <script>
+        function func() {
+            let elem = document.getElementById('pole');
+            elem.placeholder = "a";
+        }
+
+        function photo() {
+            let elem = document.getElementById('photo');
+            elem.src = "image/cat1.jpg";
+        }
+    </script>
+
+    <input type="text" size="19" id="pole" placeholder="opa"> 
+    <br>
+    <br>
+    <button onclick="func()">Кнопка с текстом</button>
+
+    <br>
+    <br>
+
+    <img src="image/cat.jpg" width="500" height="255" alt="lorem" id="photo">
+    <button onclick="photo()">Фото</button>
+</body></html>

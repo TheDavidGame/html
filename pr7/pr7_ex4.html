@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>pr7_ex4</title>
+</head>
+
+<body>
+    <script>
+        function func() {
+            let elem = document.getElementById('text');
+            elem.value = "Opa";
+            elem.style.color = "red";
+            elem.style.borderRadius = '10px';
+            elem.style.width = '300px';
+            elem.style.height = '60px';
+        }
+
+        function ghost() {
+            let elem = document.getElementById('text1');
+            elem.style.display = 'none';
+
+        }
+
+        function find() {
+            let elem = document.getElementById('text1');
+            elem.style.display = 'inline';
+
+        }
+    </script>
+
+    <input type="text" value="Текст" id="text">
+    <input type="submit" onclick="func()" id="button">
+    <br>
+    <input type="text" value="Текст" id="text1">
+    <br>
+    <input type="submit" onclick="ghost()" id="first" value="Исчез">
+    <input type="submit" onclick="find()" id="second" value="Появился">
+</body></html>
