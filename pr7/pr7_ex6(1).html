@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>pr7_ex6(1)</title>
+</head>
+
+<body>
+    <script>
+        function func() {
+
+            let elems = document.getElementsByTagName('p');
+            for (let i = 0; i < elems.length; i++) {
+                
+                if (i != 2) {
+                    elems[i].innerHTML = '1';
+                }
+                
+            }
+        }
+    </script>
+    <p>Текст1</p>
+
+    <p>Текст2</p>
+
+    <p>Текст3</p>
+
+    <input type="submit" onclick="func()">
+    
+    <br>
+    
+    
+    
+</body>
+</html>
+
+

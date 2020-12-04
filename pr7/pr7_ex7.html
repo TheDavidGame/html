@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>pr7_ex7</title>
+</head>
+
+<body onload="go();go2()">
+
+    <input type="text" value='1' id="tezt">
+    <input type="submit" onclick="func2()" value="start">
+
+    <br>
+    <br>
+    <input type="text" value='1' id="test">
+
+    <input type="submit" onclick="func()" value="start">
+
+    <input type="submit" onclick="func1()" value="stop">
+    <br>
+    <br>
+    <p id="clock">00:00:00</p>
+    <br>
+    <br>
+    <div id="slider"><img style="width: 500px; height: 200px;" src=""></div>
+    <br>
+    <br>
+    <img style="width: 200px; height: 100px;" src="img/unnamed.jpg" id="img1">
+    <img style="width: 200px; height: 100px;" src="img/doggi.jpg" id="img2">
+    <img style="width: 200px; height: 100px;" src="img/dog.jpg" id="img3">
+    <img style="width: 200px; height: 100px;" src="img/korgi.jpg" id="img4">
+    <img style="width: 200px; height: 100px;" src="img/ab.jpg" id="img5">
+    <p><input type="submit" value="Пуск" onclick="start3()">
+        <input type="submit" value="Стоп" onclick="stop3()">
+    </p>
+    <p>До полуночи осталось:</p>
+    
+   <span id="hour"></span>
+    <span id="minute"></span>
+     <span id="second"></span>
+
+   
+    <script>
+        function func() {
+            window.timerID = window.setInterval(timer, 1000);
+
+        }
+
+        function func2() {
+            window.timerID = window.setInterval(timer1, 1000);
+
+        }
+
+        function func1() {
+            window.clearInterval(window.timerID);
+        }
+
+        function timer1() {
+            let elem = document.getElementById('tezt');
+            elem.value = parseInt(elem.value) + 1;
+        }
+
+        function timer() {
+            let elem = document.getElementById('test');
+            elem.value = parseInt(elem.value) + 1;
+        }
+
+        function go() {
+            window.timerId = window.setInterval(timer2, 1000);
+        }
+
+        function timer2() {
+            let clock = document.getElementById('clock');
+            let date = new Date();
+            clock.innerHTML = addZero(date.getHours()) + ':' + addZero(date.getMinutes()) + ':' + addZero(date.getSeconds());
+        }
+
+        function addZero(num) {
+            if (num <= 9) return '0' + num;
+            else return num;
+        }
+
+        let images = ['img/unnamed.jpg', 'img/doggi.jpg', 'img/dog.jpg', 'img/korgi.jpg', 'img/ab.jpg'];
+
+        let slider = document.querySelector('#slider');
+        let img = document.querySelector('img');
+        let i = 1;
+        img.src = images[i];
+        window.setInterval(function() {
+            img.src = images[i];
+            i++;
+            if (i == images.length) {
+                i = 0;
+            }
+        }, 1000);
+
+
+        function timer3() {
+            let img1 = document.getElementById('img1');
+            let img2 = document.getElementById('img2');
+            let img3 = document.getElementById('img3');
+            let img4 = document.getElementById('img4');
+            let img5 = document.getElementById('img5');
+            let newImg = img1.src;
+            img1.src = img2.src;
+            img2.src = img3.src;
+            img3.src = img4.src;
+            img4.src = img5.src;
+            img5.src = newImg;
+        }
+
+        function stop3() {
+            window.clearInterval(window.timerId);
+
+        }
+        function go2(){
+	window.timerId = window.setInterval(timer4, 1000);
+	}
+	function timer4(){
+	let seconds = document.getElementById('second');
+	let minutes = document.getElementById('minute');
+	let hours = document.getElementById('hour');
+	let now = new Date();
+	let midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, 0, 0, 0);
+	let diff = Math.floor((midnight - now)/1000);
+	let hoursRemain = Math.floor(diff/(60*60));
+	let minutesRemain = Math.floor((diff-hoursRemain*60*60)/60);
+	let secondsRemain = Math.floor(diff%60);
+	hours.innerHTML = hoursRemain;
+	minutes.innerHTML = addZero1(minutesRemain);
+	seconds.innerHTML = addZero1(secondsRemain);
+	}
+	function addZero1(num){
+	if(num <=9) return '0'+num;
+	else return num;
+	}
+        
+    </script>
+</body></html>

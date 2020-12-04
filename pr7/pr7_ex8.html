@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Задание 8 работа 7</title>
+		<style>
+		 body {
+      height: 2000px;
+    }
+	</style>
+	</head>
+	<body>
+	<div id="elem"></div>
+	<input type="submit" id="button">
+	
+	
+	<div id="elem1"></div>
+	<input type="submit" id="button1">
+
+	<div id="elem2">длинный текст</div>
+	<input type="submit" id="button2">
+
+	
+	<script>
+	let elem = document.getElementById('elem');
+	let button = document.getElementById('button');
+	button.addEventListener('click', func);
+	function func() {
+	alert(elem.scrollTop);
+	}
+	
+	let elem1 = document.getElementById('elem1');
+	let button = document.getElementById('button1');
+	button.addEventListener('click', func1);
+
+	function func1() {
+	elem1.scrollTop = 200;
+	}
+	
+	let elem = document.getElementById('elem2');
+	let button = document.getElementById('button2');
+	button.addEventListener('click', func2);
+
+	function func2() {
+	let full = elem.scrollHeight;
+	let need = full - 200;
+	elem.scrollTop = need;
+	}
+	</script>
+	</body>
+</html>
