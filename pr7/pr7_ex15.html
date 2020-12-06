@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>pr7_ex15</title>
+  <style>
+#largeImg {
+  border: solid 1px #ccc;
+  width: 550px;
+  height: 400px;
+}
+#thumbs {
+  margin: 0;
+  padding: 0;
+}
+#thumbs a {
+  margin: 2px;
+  float: left;
+}
+
+#thumbs a:hover {
+  border: 1px solid  #FF9900;
+}
+
+#thumbs li {
+
+  list-style: none;
+}
+
+img{
+width: 100px;
+height: 100px;
+}
+</style>
+</head>
+
+<body>
+
+  <p><img id="largeImg" src="img/ab.jpg"  alt="Large image"></p>
+
+  <ul id="thumbs">
+    
+    <li>
+      <a href="img/ab.jpg" title="Image 2"><img src="img/ab.jpg"></a>
+    </li>
+    <li>
+      <a href="img/dog.jpg" title="Image 3"><img src="img/dog.jpg"></a>
+    </li>
+    <li>
+      <a href="img/doggi.jpg" title="Image 4"><img src="img/doggi.jpg"></a>
+    </li>
+    <li>
+      <a href="img/korgi.jpg" title="Image 5"><img src="img/korgi.jpg"></a>
+    </li>
+    <li>
+      <a href="img/unnamed.jpg" title="Image 6"><img src="img/unnamed.jpg"></a>
+    </li>
+  </ul>
+
+  <script>
+    thumbs.onclick = function(event) {
+      let thumbnail = event.target.closest('a');
+
+      if (!thumbnail) return;
+      showThumbnail(thumbnail.href, thumbnail.title);
+      event.preventDefault();
+    }
+
+    function showThumbnail(href, title) {
+      largeImg.src = href;
+      largeImg.alt = title;
+    }
+  </script>
+
+</body>
+</html>

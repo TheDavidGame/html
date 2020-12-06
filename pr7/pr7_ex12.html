@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>pr7_ex12</title>
+	</head>
+
+<body>
+
+  <ul class="tree" id="tree">
+    <li>Животные
+      <ul>
+        <li>Многоклеточные
+          <ul>
+            <li>Плоские черви</li>
+            <li>Круглые черви</li>
+            <li>Кольчатые черви</li>
+          </ul>
+        </li>
+        <li>Одноклеточные 
+          <ul>
+            <li>Инфузории </li>
+            <li>Апикомплексы</li>
+            <li>Саркожгутиковые</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Млекопитающие 
+      <ul>
+        <li>Высшие звери
+          <ul>
+            <li>Насекомоядные</li>
+            <li>Хищные</li>
+            <li>Грызуны</li>
+            <li>Приматы</li>
+          </ul>
+        </li>
+        <li>Низшие звери
+          <ul>
+            <li>Сумчатые</li>
+          </ul>
+        </li>
+        <li>Первозвери
+          <ul>
+            <li>Яйцекладушие</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    for (let li of tree.querySelectorAll('li')) {
+      let span = document.createElement('span');
+      li.prepend(span);
+      span.append(span.nextSibling); 
+    }
+
+
+    tree.onclick = function(event) {
+
+      if (event.target.tagName != 'SPAN') {
+        return;
+      }
+
+      var childrenContainer = event.target.parentNode.querySelector('ul');
+      if (!childrenContainer) return; 
+
+      childrenContainer.hidden = !childrenContainer.hidden;
+    }
+  </script>
+
+</body>
+</html>

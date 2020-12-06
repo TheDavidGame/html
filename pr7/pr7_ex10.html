@@ -1,0 +1,31 @@
+﻿﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>pr7_ex10</title>
+	</head>
+	<body>
+	<div style="padding: 10px 20px 10px; position: relative;" class="cross">
+      <h3>Москва-Сити</h3>
+      <p>Деловой центр «Москва-Сити» — одна из главных современных достопримечательностей столицы. Это район с небоскребами на месте бывшей каменоломни возле Пресненской набережной. Раньше здесь добывали известняк, а теперь возвышаются здания из стекла и бетона.</p>
+    </div>
+	<div style="padding: 10px 20px 10px; position: relative;" class="cross">
+      <h3>Храм Василия Блаженного</h3>
+      <p>Собор Покрова Пресвятой Богородицы, что на Рву, за которым в народе закрепилось название собор Василия Блаженного, — действующий православный храм, музей, одна из главных достопримечательностей Красной площади.</p>
+    </div>
+	<div style="padding: 10px 20px 10px; position: relative;" class="cross">
+      <h3>Останкинская телебашня</h3>
+      <p>Останкинская телебашня — главная теле- и радиовещательная башня страны, располагается у телецентра «Останкино», на улице Академика Королева.</p>
+    </div>
+	
+	</body>
+	<script>
+        
+	let  panes = document.querySelectorAll('.cross');
+
+    for(let  cross of panes) {
+      cross.insertAdjacentHTML("afterbegin", '<button style=" position: absolute;   top: 0;right: 10px;display: block;" class="remove-button">[x]</button>');
+      cross.firstChild.onclick = () => cross.remove();
+    }
+	</script>
+	</body>
+</html>
