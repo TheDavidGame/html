@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>pr8_ex1</title>
+    <style>
+        #imag {
+            position: relative;
+            width: 200px;
+            height: 150px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <img src="img/gaz.png" id="imag">
+        <br>
+
+
+        <script>
+            imag.onclick = function() {
+                let start = Date.now();
+                let timer = setInterval(function() {
+
+                    let timePassed = Date.now() - start;
+                    if (timePassed >= 2000) {
+                        window.clearInterval(timer);
+                    } else {
+                        imag.style.left = timePassed / 5 + 'px';
+                    }
+                }, 20);
+            }
+
+        </script>
+</body>
+
+</html>
